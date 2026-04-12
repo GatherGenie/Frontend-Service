@@ -2,7 +2,7 @@ name: Frontend CI Pipeline
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main ] 
   pull_request:
     branches: [ main ]
 
@@ -29,6 +29,7 @@ jobs:
       # 4. Build App
       - name: Build Application
         run: npm run build
+        working-directory: ./src
 
       # -------------------------------
       #  SONARCLOUD SCAN
@@ -37,8 +38,8 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-            -Dsonar.organization=${{ secrets.SONAR_ORG }}
+            -Dsonar.projectKey=aravindroy1_Frontend-Service-A
+            -Dsonar.organization=aravindroy1
             -Dsonar.qualitygate.wait=true
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
