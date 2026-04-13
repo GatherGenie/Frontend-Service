@@ -18,7 +18,7 @@ jobs:
 
       - name: Build Image
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-app:${{ github.event.inputs.version }} .
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-app:${{ github.event.inputs.version }} ./src
 
       - name: Save Tag
         run: echo "IMAGE_TAG=${{ github.event.inputs.version }}" >> $GITHUB_ENV
