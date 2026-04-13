@@ -52,11 +52,11 @@ jobs:
       - name: Snyk Scan
         uses: snyk/actions/node@master
         with:
-          args: --file=package.json
+          args: --file=src/package.json
           command: test
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
+        working-directory: Frontend-Service
       # -------------------------------
       # DOCKER BUILD
       # -------------------------------
