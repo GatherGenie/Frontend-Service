@@ -35,11 +35,12 @@ jobs:
       #  SONARCLOUD SCAN
       # -------------------------------
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@v2
+        uses: SonarSource/sonarqube-scan-action@v7
         with:
           args: >
             -Dsonar.projectKey=aravindroy1_Frontend-Service-A
             -Dsonar.organization=aravindroy1
+            -Dsonar.sources=.
             -Dsonar.qualitygate.wait=false
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
