@@ -19,7 +19,7 @@ jobs:
       # Rebuild image (needed in new runner)
       - name: Build Image Again
         run: |
-          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-app:latest ./src
+          docker build -t ${{ secrets.DOCKER_USERNAME }}/frontend-app:latest ./
 
       # -------------------------------
       # TRIVY SCAN
