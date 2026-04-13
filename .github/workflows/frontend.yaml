@@ -1,4 +1,4 @@
-name: Frontend CI Pipeline 
+name: Frontend CI Pipeline  
 
 on:
   push:
@@ -41,6 +41,7 @@ jobs:
             -Dsonar.projectKey=aravindroy1_Frontend-Service-A
             -Dsonar.organization=aravindroy1
             -Dsonar.sources=.
+            -Dsonar.host.url=https://sonarcloud.io
             -Dsonar.qualitygate.wait=false
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
